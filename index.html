@@ -5,90 +5,27 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>Rock Paper Scissor</title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 
 <body>
-  <p>Enter your choice</p>
-  <button id="rock" onclick="playRound(0);">Rock</button>
-  <button id="paper" onclick="playRound(1);">Paper</button>
-  <button id="scissor" onclick="playRound(2);">Scissor</button>
+  <p>Select your choice</p>
+  <button id="rock" class="choice-button" onclick="playRound(0);">Rock</button>
+  <button id="paper" class="choice-button" onclick="playRound(1);">Paper</button>
+  <button id="scissor" class="choice-button" onclick="playRound(2);">Scissor</button>
 
-  <p>Result:</p>
-  <div class="container">
-    <p class="human">You</p>
-    <p class="computer">Computer</p>
-  </div>
+  <p class="human">Your Score</p>
+  <p class="computer">Computers Score</p>
 
-  <div class="container">
-    <p class="humanChoice"></p>
-    <p class="computerChoice"></p>
-  </div>
+  <p class="choice"></p>
 
   <p class="game-result"></p>
 
-  <script>
-    let choices = ["Rock", "Paper", "Scissor"];
-    let humanScore = 0;
-    let computerScore = 0;
-    let humanChoice = "";
-    let computerChoice = "";
+  <div class="reload">
+    <button onclick="reloadPage();">Reload</button>
+  </div>
 
-    function playRound(choice) {
-      getHumanChoice(choice);
-      getComputerChoice();
-
-      if (humanChoice === computerChoice) {
-        document.getElementsByClassName("game-result")[0].innerHTML = "Draw";
-        return
-      }
-
-      let winCondition1 = humanChoice === choices[0] && computerChoice === choices[2];
-      let winCondition2 = humanChoice === choices[1] && computerChoice === choices[0];
-      let winCondition3 = humanChoice === choices[3] && computerChoice === choices[1];
-      if (winCondition1 || winCondition2 || winCondition3) {
-        humanScore++;
-        document.getElementsByClassName("human")[0].innerHTML = "You " + humanScore;
-        document.getElementsByClassName("game-result")[0].innerHTML = "Won";
-      } else {
-        computerScore++;
-        document.getElementsByClassName("computer")[0].innerHTML = "Computer " + computerScore;
-        document.getElementsByClassName("game-result")[0].innerHTML = "Lost";
-      }
-    }
-
-    function getHumanChoice(choice) {
-      humanChoice = choices[choice];
-      document.getElementsByClassName("humanChoice")[0].innerHTML = humanChoice;
-    }
-
-    function getComputerChoice() {
-      let index = Math.floor(Math.random() * choices.length)
-      computerChoice = choices[index];
-      document.getElementsByClassName("computerChoice")[0].innerHTML = computerChoice;
-    }
-  </script>
-
-  <style>
-    .container {
-      width: 100%;
-      display: flex;
-      justify-content: space-around;
-    }
-
-    .human,
-    .computer {
-      font-size: large;
-      font-weight: bold;
-    }
-
-    .game-result {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      font-size: xx-large;
-      font-weight: bolder;
-    }
-  </style>
+  <script src="script.js"></script>
 
 </body>
 

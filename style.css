@@ -1,0 +1,21 @@
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.game-result {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-size: xx-large;
+  font-weight: bolder;
+}
+
+.reload {
+  width: 100%;
+  display: none;
+  justify-content: center;
+  font-size: xx-large;
+  font-weight: bolder;
+}
