@@ -39,7 +39,7 @@ function roundResult() {
     //condition for win
     let rockBeatsScissor = humanChoice === choices[0] && computerChoice === choices[2];
     let paperBeatsRock = humanChoice === choices[1] && computerChoice === choices[0];
-    let scissorBeatsPaper = humanChoice === choices[3] && computerChoice === choices[1];
+    let scissorBeatsPaper = humanChoice === choices[2] && computerChoice === choices[1];
 
     if (rockBeatsScissor || paperBeatsRock || scissorBeatsPaper) {
         humanScore++;
